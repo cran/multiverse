@@ -23,34 +23,33 @@ opts_chunk$set(
 ## -----------------------------------------------------------------------------
 M = multiverse()
 
-## ----h-1, inside = M, echo = FALSE, engine="multiverse"-----------------------
-x <- "low"
+## -----------------------------------------------------------------------------
+x = rnorm(100, 30, 10)
 
-## ----h-1, inside = M, echo = FALSE, engine="multiverse"-----------------------
-x <- "medium"
+## ----h-0, inside = M, echo = FALSE, engine="multiverse"-----------------------
+y = ifelse(x < 30, "low", "high")
 
-## ----h-1, inside = M, echo = FALSE, engine="multiverse"-----------------------
-x <- "high"
+## ----h-0, inside = M, echo = FALSE, engine="multiverse"-----------------------
+y = ifelse(x < 20, "low", ifelse(x > 40, "high", "medium"))
 
 ## -----------------------------------------------------------------------------
-expand(M) %>%
-  select(.universe, everything())
+expand(M)
 
 ## -----------------------------------------------------------------------------
 data("userlogs")
 data.userlogs.raw = userlogs %>%
   mutate( modality = factor(modality) ) %>%
-  arrange(modality)
+  arrange( modality )
 
 ## -----------------------------------------------------------------------------
 M = multiverse()
 
-## ----h-2, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-1, inside = M, echo = FALSE, engine="multiverse"-----------------------
 df <- data.userlogs.raw %>%
     select(modality, duration) %>%
     mutate(duration = duration)
 
-## ----h-2, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-1, inside = M, echo = FALSE, engine="multiverse"-----------------------
 df <- data.userlogs.raw %>%
     select(modality, duration) %>%
     mutate(duration = log(duration))
@@ -64,11 +63,69 @@ expand(M)$.code
 ## -----------------------------------------------------------------------------
 M = multiverse()
 
-## ----h-3, inside = M, echo = FALSE, engine="multiverse"-----------------------
-duration <- log(data.userlogs.raw$duration)
+## ----h-2, inside = M, echo = FALSE, engine="multiverse"-----------------------
+data("hurricane")
+hurricane_data = hurricane %>%
+    rename(year = Year, name = Name, dam = NDAM, death = alldeaths, female = Gender_MF,
+        masfem = MasFem, category = Category, pressure = Minpressure_Updated_2014,
+        wind = HighestWindSpeed)
+df.filtered = hurricane_data %>%
+    filter(TRUE)
+
+## ----h-2, inside = M, echo = FALSE, engine="multiverse"-----------------------
+data("hurricane")
+hurricane_data = hurricane %>%
+    rename(year = Year, name = Name, dam = NDAM, death = alldeaths, female = Gender_MF,
+        masfem = MasFem, category = Category, pressure = Minpressure_Updated_2014,
+        wind = HighestWindSpeed)
+df.filtered = hurricane_data %>%
+    filter(name != "Katrina")
+
+## ----h-2, inside = M, echo = FALSE, engine="multiverse"-----------------------
+data("hurricane")
+hurricane_data = hurricane %>%
+    rename(year = Year, name = Name, dam = NDAM, death = alldeaths, female = Gender_MF,
+        masfem = MasFem, category = Category, pressure = Minpressure_Updated_2014,
+        wind = HighestWindSpeed)
+df.filtered = hurricane_data %>%
+    filter(!(name %in% c("Katrina", "Audrey")))
+
+## -----------------------------------------------------------------------------
+expand(M)
 
 ## ----h-3, inside = M, echo = FALSE, engine="multiverse"-----------------------
-duration <- identity(data.userlogs.raw$duration)
+df.filtered = hurricane_data %>%
+    filter(TRUE)
+
+## ----h-3, inside = M, echo = FALSE, engine="multiverse"-----------------------
+df.filtered = hurricane_data %>%
+    filter(name != "Katrina")
+
+## ----h-3, inside = M, echo = FALSE, engine="multiverse"-----------------------
+df.filtered = hurricane_data %>%
+    filter(!(name %in% c("Katrina", "Audrey")))
+
+## -----------------------------------------------------------------------------
+M = multiverse()
+
+## ----default-h-6, inside = M, engine="multiverse"-----------------------------
+{
+    x = 1
+}
+
+## ----default-h-6, inside = M, engine="multiverse"-----------------------------
+{
+    x = 2
+}
+
+## -----------------------------------------------------------------------------
+M = multiverse()
+
+## ----h-7, inside = M, echo = FALSE, engine="multiverse"-----------------------
+duration = log(data.userlogs.raw$duration)
+
+## ----h-7, inside = M, echo = FALSE, engine="multiverse"-----------------------
+duration = identity(data.userlogs.raw$duration)
 
 ## -----------------------------------------------------------------------------
 execute_multiverse(M)
@@ -76,13 +133,16 @@ execute_multiverse(M)
 expand(M) %>%
   mutate(transformed_duration = map(.results, "duration"))
 
-## ----h-4, inside = M, echo = FALSE, engine="multiverse"-----------------------
-duration_transform <- log
-duration <- duration_transform(data.userlogs.raw$duration)
+## -----------------------------------------------------------------------------
+M = multiverse()
 
-## ----h-4, inside = M, echo = FALSE, engine="multiverse"-----------------------
-duration_transform <- identity
-duration <- duration_transform(data.userlogs.raw$duration)
+## ----h-8, inside = M, echo = FALSE, engine="multiverse"-----------------------
+duration_transform = log
+duration = duration_transform(data.userlogs.raw$duration)
+
+## ----h-8, inside = M, echo = FALSE, engine="multiverse"-----------------------
+duration_transform = identity
+duration = duration_transform(data.userlogs.raw$duration)
 
 ## -----------------------------------------------------------------------------
 execute_multiverse(M)
@@ -109,41 +169,7 @@ bootstrapped_ci <- function(x, y) {
         rename(estimate = statistic)
 }
 
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- t_test_ci
-ci <- 0.5
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- t_test_ci
-ci <- 0.68
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-9, inside = M, echo = FALSE, engine="multiverse"-----------------------
 data_trans <- log
 fit <- t_test_ci
 ci <- 0.95
@@ -160,58 +186,7 @@ df <- df %>%
     select(-data) %>%
     unnest(cols = c(fit))
 
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- t_test_ci
-ci <- 0.99
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- bootstrapped_ci
-ci <- 0.5
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- bootstrapped_ci
-ci <- 0.68
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-9, inside = M, echo = FALSE, engine="multiverse"-----------------------
 data_trans <- log
 fit <- bootstrapped_ci
 ci <- 0.95
@@ -228,58 +203,7 @@ df <- df %>%
     select(-data) %>%
     unnest(cols = c(fit))
 
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- log
-fit <- bootstrapped_ci
-ci <- 0.99
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- t_test_ci
-ci <- 0.5
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- t_test_ci
-ci <- 0.68
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-9, inside = M, echo = FALSE, engine="multiverse"-----------------------
 data_trans <- identity
 fit <- t_test_ci
 ci <- 0.95
@@ -296,78 +220,10 @@ df <- df %>%
     select(-data) %>%
     unnest(cols = c(fit))
 
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- t_test_ci
-ci <- 0.99
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- bootstrapped_ci
-ci <- 0.5
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- bootstrapped_ci
-ci <- 0.68
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-9, inside = M, echo = FALSE, engine="multiverse"-----------------------
 data_trans <- identity
 fit <- bootstrapped_ci
 ci <- 0.95
-df <- data.userlogs.raw %>%
-    mutate(duration = data_trans(duration)) %>%
-    mutate(modality.f = factor(modality)) %>%
-    group_by(subject, modality.f, modalityname) %>%
-    summarise(duration = mean(duration), .groups = "drop") %>%
-    group_by(modality.f) %>%
-    rename(value = duration) %>%
-    summarise(data = list(value), .groups = "keep")
-df <- df %>%
-    mutate(fit = map(data, ~fit(.x, ci))) %>%
-    select(-data) %>%
-    unnest(cols = c(fit))
-
-## ----h-5, inside = M, echo = FALSE, engine="multiverse"-----------------------
-data_trans <- identity
-fit <- bootstrapped_ci
-ci <- 0.99
 df <- data.userlogs.raw %>%
     mutate(duration = data_trans(duration)) %>%
     mutate(modality.f = factor(modality)) %>%
@@ -405,12 +261,18 @@ expand(M) %>%
   #geom_vline( xintercept = 0,  colour = '#979797' ) +
   geom_point( aes(x = estimate, y = modality.f)) +
   geom_errorbarh( aes(xmin = conf.low, xmax = conf.high, y = modality.f), height = 0) +
-  facet_grid(ci ~ data_trans, scales = "free")
+  facet_grid(. ~ data_trans, scales = "free")
+
+## -----------------------------------------------------------------------------
+M.1 = multiverse()
+
+## -----------------------------------------------------------------------------
+M.2 = multiverse()
 
 ## -----------------------------------------------------------------------------
 M = multiverse()
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(1L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -418,7 +280,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(2L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -426,7 +288,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(3L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -434,7 +296,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(4L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -442,7 +304,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(5L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -450,7 +312,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(6L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -458,7 +320,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(7L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -466,7 +328,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(8L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -474,7 +336,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(9L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -482,7 +344,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(10L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -490,7 +352,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(11L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -498,7 +360,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(12L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -506,7 +368,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(13L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -514,7 +376,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(14L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -522,7 +384,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(15L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -530,7 +392,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(16L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -538,7 +400,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(17L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -546,7 +408,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(18L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -554,7 +416,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(19L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -562,7 +424,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(20L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -570,7 +432,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(21L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -578,7 +440,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(22L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -586,7 +448,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(23L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -594,7 +456,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(24L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)
@@ -602,7 +464,7 @@ y <- x1 + x2 + runif(25)
 m <- lm(y ~ x1 + x2)
 intervals <- broom::tidy(m, conf.int = TRUE)
 
-## ----h-6, inside = M, echo = FALSE, engine="multiverse"-----------------------
+## ----h-10, inside = M, echo = FALSE, engine="multiverse"----------------------
 set.seed(25L)
 x1 <- rnorm(25)
 x2 <- rnorm(25)

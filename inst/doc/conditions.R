@@ -154,11 +154,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -167,9 +167,9 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -179,11 +179,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -192,11 +192,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -205,9 +205,9 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -217,11 +217,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -230,11 +230,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -243,9 +243,9 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -255,11 +255,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -268,10 +268,10 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -280,191 +280,7 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -474,11 +290,46 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -487,10 +338,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -499,9 +351,10 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -510,10 +363,11 @@ df <- df_durante %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -521,50 +375,12 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -572,194 +388,10 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -767,37 +399,37 @@ df <- df_durante %>%
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -805,218 +437,34 @@ df <- df_durante %>%
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -1025,33 +473,33 @@ df <- df_durante %>%
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -1060,25 +508,209 @@ df <- df_durante %>%
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1086,10 +718,10 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -1098,12 +730,12 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1111,721 +743,537 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(TRUE) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(TRUE) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(TRUE) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -1833,13 +1281,527 @@ df <- df_durante %>%
 df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1848,11 +1810,11 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1861,9 +1823,47 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -1873,11 +1873,11 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1886,11 +1886,11 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1899,9 +1899,9 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -1911,11 +1911,11 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1924,10 +1924,10 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1936,7 +1936,7 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -1947,10 +1947,10 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1959,10 +1959,10 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1971,7 +1971,7 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -1982,10 +1982,10 @@ df <- df_durante %>%
     dplyr::filter(ComputedCycleLength > 25 & ComputedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -1994,11 +1994,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2007,9 +2007,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2019,11 +2019,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2032,11 +2032,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2045,9 +2045,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2057,11 +2057,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2070,11 +2070,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2083,9 +2083,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2095,11 +2095,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2108,10 +2108,10 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2120,191 +2120,7 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -2314,11 +2130,46 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2327,10 +2178,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2339,7 +2191,155 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(TRUE) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -2350,10 +2350,10 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(TRUE) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2362,11 +2362,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2375,9 +2375,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2387,11 +2387,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2400,11 +2400,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2413,9 +2413,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2425,11 +2425,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
         17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2438,11 +2438,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2451,9 +2451,9 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
 
@@ -2463,11 +2463,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
         18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2476,10 +2476,10 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2488,191 +2488,7 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >= 
-        17 & CycleDay <= 27, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >= 
-        18 & CycleDay <= 25, "low", NA)))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
-        3 | Relationship == 4, "Relationship", NA))))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
-        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
-        2, "Single", "Relationship")))
-
-## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
-df <- df_durante %>%
-    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
-    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
-    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -2682,11 +2498,46 @@ df <- df_durante %>%
     mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
-    mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateofLastPeriod + ReportedCycleLength) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2695,10 +2546,11 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
-    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship == 
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
         2, "Single", "Relationship")))
 
 ## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
@@ -2707,7 +2559,155 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 7 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 6 & CycleDay <= 14, "high", ifelse(CycleDay >=
+        17 & CycleDay <= 27, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 9 & CycleDay <= 17, "high", ifelse(CycleDay >=
+        18 & CycleDay <= 25, "low", NA)))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 14, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
+        3 | Relationship == 4, "Relationship", NA))))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
+        1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
+    mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1 | Relationship ==
+        2, "Single", "Relationship")))
+
+## ----default-m-2, inside = M, echo = FALSE, engine="multiverse"---------------
+df <- df_durante %>%
+    mutate(ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast) %>%
+    dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
+    dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
+    mutate(NextMenstrualOnset = StartDateNext) %>%
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
     mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", "Relationship")))
@@ -2718,10 +2718,10 @@ df <- df_durante %>%
     dplyr::filter(ReportedCycleLength > 25 & ReportedCycleLength < 35) %>%
     dplyr::filter(Sure1 > 6 | Sure2 > 6) %>%
     mutate(NextMenstrualOnset = StartDateNext) %>%
-    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay > 
+    mutate(CycleDay = 28 - (NextMenstrualOnset - DateTesting), CycleDay = ifelse(CycleDay >
         1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))) %>%
     mutate(Fertility = factor(ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low"))) %>%
-    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship == 
+    mutate(RelationshipStatus = factor(ifelse(Relationship == 1, "Single", ifelse(Relationship ==
         3 | Relationship == 4, "Relationship", NA))))
 
 ## ---- df-conditions-assert----------------------------------------------------

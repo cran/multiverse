@@ -6,15 +6,13 @@
 \alias{is.multiverse}
 \title{Create a new multiverse object}
 \usage{
-multiverse(...)
+multiverse()
 
 is_multiverse(x)
 
 is.multiverse(x)
 }
 \arguments{
-\item{...}{currently unused}
-
 \item{x}{An object}
 }
 \value{
@@ -26,13 +24,10 @@ An empty multiverse object
 }
 \description{
 Constructs a new multiverse object which enables conducting a multiverse analysis
-
-This function returns `TRUE` for objects of class multiverse,
-and `FALSE` for all other objects.
 }
 \details{
 To perform a multiverse analysis, the user needs to first constructs a new multiverse object. The user can declare
-multiple analysis pathways within this multiverse object, and execute these analyses. The multiverse object is
+multiple analysis pathways within this multiverse object, and execute these analyses. The multiverse object
 contains the following slots:
 \itemize{
   \item code: This slot stores the user's code for conducting a multiverse analysis. The user can
@@ -41,7 +36,7 @@ contains the following slots:
   \item parameters: This slot contains a named list of lists. It contains each parameter defined in the
   code using the `branch()` function, and the options defined for each parameter (as a list).
 
-  \item conditions (NOT IMPLEMENTED): This slot contain a list of conditions: if any of the
+  \item conditions: This slot contain a list of conditions: if any of the
   parameter values are conditional on a specific value of another parameter, these can be defined in the code
   using `branch_assert()` or `branch_exclude()`.
 

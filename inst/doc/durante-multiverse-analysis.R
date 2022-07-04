@@ -11,9 +11,6 @@ library(gganimate)
 library(cowplot)
 library(multiverse)
 
-## ---- include=FALSE-----------------------------------------------------------
-M = multiverse()
-
 ## ---- chunk-setup, include=FALSE----------------------------------------------
 knitr::opts_chunk$set(
   echo = TRUE,
@@ -47,6 +44,7 @@ one_universe = data.raw.study2 %>%
   mutate( NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength ) %>%
   mutate(
     CycleDay = 28 - (NextMenstrualOnset - DateTesting),
+    CycleDay = ifelse(WorkerID == 15, 11, ifelse(WorkerID == 16, 18, CycleDay)),
     CycleDay = ifelse(CycleDay > 1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))
   ) %>%
   mutate(
@@ -66,8 +64,8 @@ one_universe %>%
   ggplot(aes(x = Relationship, y = Rel1 + Rel2 + Rel3, color = Fertility)) +
   stat_summary(position = position_dodge(width = .1), fun.data = "mean_se")
 
-## ---- eval = FALSE------------------------------------------------------------
-#  M <- multiverse()
+## -----------------------------------------------------------------------------
+M <- multiverse()
 
 ## ----eval = FALSE-------------------------------------------------------------
 #  df <- data.raw.study2 %>%
@@ -115,13 +113,14 @@ M$df
 ## -----------------------------------------------------------------------------
 inside(M, {
   df <- df %>%
-      mutate(Relationship = branch( relationship_status, 
+      mutate(RelationshipStatus = branch( relationship_status, 
         "rs_option1" ~ factor(ifelse(Relationship==1 | Relationship==2, 'Single', 'Relationship')),
         "rs_option2" ~ factor(ifelse(Relationship==1, 'Single', 'Relationship')),
         "rs_option3" ~ factor(ifelse(Relationship==1, 'Single', ifelse(Relationship==3 | Relationship==4, 'Relationship', NA))) )
       ) %>%
       mutate(
         CycleDay = 28 - (NextMenstrualOnset - DateTesting),
+        CycleDay = ifelse(WorkerID == 15, 11, ifelse(WorkerID == 16, 18, CycleDay)),
         CycleDay = ifelse(CycleDay > 1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))
       ) %>%
       filter( branch(cycle_length, 
@@ -169,7 +168,7 @@ M$df %>%
 M = multiverse()
 
 inside(M, {
-  df <- data.raw.study2  %>%
+  df <- data.raw.study2 %>%
     mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast )  %>%
     dplyr::filter( branch(cycle_length,
         "cl_option1" ~ TRUE,
@@ -187,6 +186,7 @@ inside(M, {
     )  %>%
     mutate(
       CycleDay = 28 - (NextMenstrualOnset - DateTesting),
+      CycleDay = ifelse(WorkerID == 15, 11, ifelse(WorkerID == 16, 18, CycleDay)),
       CycleDay = ifelse(CycleDay > 1 & CycleDay < 28, CycleDay, ifelse(CycleDay < 1, 1, 28))
     ) %>%
     mutate( Fertility = branch( fertile,
@@ -205,9 +205,6 @@ inside(M, {
 
 ## -----------------------------------------------------------------------------
 expand(M) %>% nrow()
-
-## -----------------------------------------------------------------------------
-expand(M)$.code[[59]]
 
 ## -----------------------------------------------------------------------------
 inside(M, {
@@ -234,21 +231,21 @@ expand(M) %>%
   unnest( cols = c(summary_RelComp) ) %>%
   head( 10 )
 
-## ---- message = FALSE---------------------------------------------------------
-p <- expand(M) %>%
-  extract_variables(summary_RelComp) %>%
-  unnest( cols = c(summary_RelComp) ) %>%
-  mutate( term = recode( term, 
-                 "RelationshipStatusSingle" = "Single",
-                 "Fertilitylow:RelationshipStatusSingle" = "Single:Fertility_low"
-  ) ) %>%
-  filter( term != "(Intercept)" ) %>%
-  ggplot() + 
-  geom_vline( xintercept = 0,  colour = '#979797' ) +
-  geom_point( aes(x = estimate, y = term)) +
-  geom_errorbarh( aes(xmin = conf.low, xmax = conf.high, y = term), height = 0) +
-  theme_minimal() +
-  transition_manual( .universe )
-
-animate(p, nframes = 210, fps = 2)
+## ---- message = FALSE, eval = FALSE-------------------------------------------
+#  p <- expand(M) %>%
+#    extract_variables(summary_RelComp) %>%
+#    unnest( cols = c(summary_RelComp) ) %>%
+#    mutate( term = recode( term,
+#                   "RelationshipStatusSingle" = "Single",
+#                   "Fertilitylow:RelationshipStatusSingle" = "Single:Fertility_low"
+#    ) ) %>%
+#    filter( term != "(Intercept)" ) %>%
+#    ggplot() +
+#    geom_vline( xintercept = 0,  colour = '#979797' ) +
+#    geom_point( aes(x = estimate, y = term)) +
+#    geom_errorbarh( aes(xmin = conf.low, xmax = conf.high, y = term), height = 0) +
+#    theme_minimal() +
+#    transition_manual( .universe )
+#  
+#  animate(p, nframes = 210, fps = 4, res = 72)
 

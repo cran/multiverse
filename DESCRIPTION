@@ -1,11 +1,12 @@
 Package: multiverse
-Version: 0.5.0
-Date: 2021-05-25
+Version: 0.6.1
+Date: 2022-7-2
 Title: 'Explorable Multiverse' Data Analysis and Reports
 Authors@R: c(
         person("Abhraneel", "Sarma", role = c("aut", "cre"), email = "abhraneel@u.northwestern.edu"),
-        person("Michael", "Moon", role = "aut", email = "moon@utstat.toronto.edu"),
         person("Matthew", "Kay", role = "aut", email = "mjskay@northwestern.edu"),
+        person("Michael", "Moon", role = "ctb", email = "moon@utstat.toronto.edu"),
+        person("Mark", "Miller", role = "ctb", email = "725mrm@gmail.com"),
         person("Alex", "Kale", role = "ctb", email = "kalea@uw.edu"),
         person("Nathan", "Taback", role = "ctb", email = "nathan.taback@utoronto.ca"),
         person("Fanny", "Chevalier", role = "ctb", email = "fanny@dgp.toronto.edu"),
@@ -24,24 +25,26 @@ Description: Implement 'multiverse' style analyses (Steegen S., Tuerlinckx F, Ge
     analysis, which involve declaring alternate ways of performing an analysis step, in R and R Notebooks.
 License: GPL (>= 3)
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 Depends: R (>= 3.5.0), knitr (>= 1.3.2)
 Imports: dplyr (>= 0.8.1), purrr (>= 0.3.2), rlang (>= 0.4.0), R6,
         methods, tidyr (>= 1.0.0), tibble, magrittr, tidyselect,
-        formatR, collections, evaluate, rstudioapi, berryFunctions
-Suggests: ggplot2 (>= 3.0.0), testthat (>= 2.1.0), highr, lubridate,
-        rmarkdown, covr, broom, boot, gganimate, gifski, forcats,
-        stringr, cowplot, tidybayes, png, stringi, modelr, styler
+        formatR, collections, evaluate, rstudioapi, berryFunctions,
+        future.apply
+Suggests: ggplot2 (>= 3.0.0), testthat (>= 2.1.0), highr, rmarkdown,
+        covr, broom, boot, gganimate, gifski, forcats, stringr,
+        cowplot, tidybayes, png, stringi, modelr, styler, future
 VignetteBuilder: knitr
 Language: en-US
 BugReports: https://github.com/MUCollective/multiverse/issues/new
 URL: https://mucollective.github.io/multiverse/,
         https://github.com/mucollective/multiverse/
 NeedsCompilation: no
-Packaged: 2021-05-31 02:13:46 UTC; abhraneel
+Packaged: 2022-07-02 20:15:56 UTC; abhraneelsarma
 Author: Abhraneel Sarma [aut, cre],
-  Michael Moon [aut],
   Matthew Kay [aut],
+  Michael Moon [ctb],
+  Mark Miller [ctb],
   Alex Kale [ctb],
   Nathan Taback [ctb],
   Fanny Chevalier [ctb],
@@ -49,4 +52,4 @@ Author: Abhraneel Sarma [aut, cre],
   Pierre Dragicevic [ctb],
   Yvonne Jansen [ctb]
 Repository: CRAN
-Date/Publication: 2021-06-01 08:40:02 UTC
+Date/Publication: 2022-07-04 13:20:02 UTC

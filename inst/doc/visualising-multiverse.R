@@ -118,22 +118,23 @@ expand(M) %>%
   mutate( summary = map(.results, "summary_RelComp") ) %>%
   unnest( summary )
 
-## ---- message = FALSE, fig.width = 6, fig.height = 4--------------------------
-p <- expand(M) %>%
-  mutate( summary_RelComp = map(.results, "summary_RelComp") ) %>%
-  unnest( cols = c(summary_RelComp) ) %>%
-  mutate( term = recode( term, 
-                 "RelationshipStatusSingle" = "Single",
-                 "Fertilitylow:RelationshipStatusSingle" = "Single:Fertility_low"
-  ) ) %>%
-  filter( term != "(Intercept)" ) %>%
-  ggplot() + 
-  geom_vline( xintercept = 0,  colour = '#979797' ) +
-  geom_point( aes(x = estimate, y = term)) +
-  geom_errorbarh( aes(xmin = conf.low, xmax = conf.high, y = term), height = 0) +
-  transition_manual( .universe )
-
-animate(p, nframes = 210, fps = 2)
+## ---- message = FALSE, fig.width = 6, fig.height = 4, eval = FALSE------------
+#  p <- expand(M) %>%
+#    mutate( summary_RelComp = map(.results, "summary_RelComp") ) %>%
+#    unnest( cols = c(summary_RelComp) ) %>%
+#    mutate( term = recode( term,
+#                   "RelationshipStatusSingle" = "Single",
+#                   "Fertilitylow:RelationshipStatusSingle" = "Single:Fertility_low"
+#    ) ) %>%
+#    filter( term != "(Intercept)" ) %>%
+#    ggplot() +
+#    geom_vline( xintercept = 0,  colour = '#979797' ) +
+#    geom_point( aes(x = estimate, y = term)) +
+#    geom_errorbarh( aes(xmin = conf.low, xmax = conf.high, y = term), height = 0) +
+#    theme_minimal() +
+#    transition_manual( .universe )
+#  
+#  animate(p, nframes = 210, fps = 2)
 
 ## ----fig.width = 9, fig.height = 9--------------------------------------------
 expand(M) %>%

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Abhraneel Sarma" />
+
+<meta name="date" content="2022-07-02" />
+
+<title>Execution of multiverse analysis — Sequential and Parallel</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Execution of multiverse analysis —
+Sequential and Parallel</h1>
+<h4 class="author">Abhraneel Sarma</h4>
+<h4 class="date">2022-07-02</h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#data-and-analysis">Data and analysis</a></li>
+<li><a href="#execution">Execution</a>
+<ul>
+<li><a href="#sequential">Sequential</a></li>
+<li><a href="#parallel-separate-r-sessions">Parallel: separate R
+sessions</a></li>
+<li><a href="#parallel-separate-forked-processes">Parallel: separate
+forked processes</a></li>
+<li><a href="#parallel-compute-clusters">Parallel: compute
+clusters</a></li>
+</ul></li>
+<li><a href="#what-if-i-want-to-execute-only-a-subset-of-the-specifications">What
+if I want to execute only a subset of the specifications?</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>As some user-specificed multiverses can be quite large, it is only
+natural that we should make use of the rich parallel processing
+resources that are widely available. <code>multiverse</code> makes use
+of futures using the <a href="https://cran.r-project.org/package=future">future</a> library,
+which “provides a very simple and uniform way of evaluating R
+expressions asynchronously…”. This allows both the user and us (as the
+creators of this library) greater flexibility in supporting how
+execution and parallel execution may be supported. How and when
+evaluation takes place depends on the strategy chosen by the user of
+executing the multiverse. These strategies include sequential execution
+in the current R session, or asynchronous parallel execution on the
+current machine or on a compute cluster.</p>
+<p>In this document, we show how you can execute each of the distinct
+analyses in your specified multiverse.</p>
+</div>
+<div id="data-and-analysis" class="section level2">
+<h2>Data and analysis</h2>
+<p>We will use the hurricane dataset that has been discussed in greater
+detail in the <a href="https://mucollective.github.io/multiverse/">README</a> as well as
+in the vignette <a href="hurricane.html">hurricane</a>. If you are
+already familiar with this dataset and analysis, please feel free to
+skip this section, and continue from the next section</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(hurricane)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>hurricane_data <span class="ot">&lt;-</span> hurricane <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># rename some variables</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> Year,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> Name,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">dam =</span> NDAM,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">death =</span> alldeaths,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">female =</span> Gender_MF,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">masfem =</span> MasFem,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">category =</span> Category,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">pressure =</span> Minpressure_Updated_2014,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">wind =</span> HighestWindSpeed</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create new variables</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">post =</span> <span class="fu">ifelse</span>(year<span class="sc">&gt;</span><span class="dv">1979</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">zcat =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(category)),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">zpressure =</span> <span class="sc">-</span><span class="fu">scale</span>(pressure),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">zwind =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(wind)),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">z3 =</span> <span class="fu">as.numeric</span>((zpressure <span class="sc">+</span> zcat <span class="sc">+</span> zwind) <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">multiverse</span>()</span></code></pre></div>
+<p>We implement the same analysis as in the
+<code>vignette(hurricane)</code>. Below we briefly outline the steps
+involved.</p>
+<p>Outlier exclusion: We implement different alternative choices on how
+to exclude outliers based on extreme observations of death and
+damages.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inside</span>(M, {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> hurricane_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">branch</span>(death_outliers, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;no_exclusion&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;most_extreme_deaths&quot;</span> <span class="sc">~</span> name <span class="sc">!=</span> <span class="st">&quot;Katrina&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;most_extreme_two_deaths&quot;</span> <span class="sc">~</span> <span class="sc">!</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Katrina&quot;</span>, <span class="st">&quot;Audrey&quot;</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">branch</span>(damage_outliers,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;no_exclusion&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;most_extreme_one_damage&quot;</span> <span class="sc">~</span> <span class="sc">!</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sandy&quot;</span>)),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;most_extreme_two_damage&quot;</span> <span class="sc">~</span> <span class="sc">!</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sandy&quot;</span>, <span class="st">&quot;Andrew&quot;</span>)),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;most_extreme_three_damage&quot;</span> <span class="sc">~</span> <span class="sc">!</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Sandy&quot;</span>, <span class="st">&quot;Andrew&quot;</span>, <span class="st">&quot;Donna&quot;</span>))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<p>Identifying independent variables: How is femininity of the name of a
+hurricane operationalised? Simonsohn et al. identify two distinct ways.
+First, using the 11 point scale that was used in the original analysis;
+or second using a binary scale.</p>
+<p>Data transformations: The dollar amount in <code>damages</code>
+caused by a hurricane follows a long tailed, positive only valued
+distribution. The decision involved is whether or not to transform
+<code>damages</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inside</span>(M, {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">femininity =</span> <span class="fu">branch</span>(femininity_calculation,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;masfem&quot;</span> <span class="sc">~</span> masfem,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;female&quot;</span> <span class="sc">~</span> female</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">damage =</span> <span class="fu">branch</span>(damage_transform,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;no_transform&quot;</span> <span class="sc">~</span> <span class="fu">identity</span>(dam),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;log_transform&quot;</span> <span class="sc">~</span> <span class="fu">log</span>(dam)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<p>Alternative specifications of regression model: The next step is to
+fit the model. We can use either a log-linear model or a poisson model
+for the step. Both are reasonable alternatives for this dataset. We also
+have to make a choice on whether we want to include an interaction
+between <code>femininity</code> and <code>damage</code>. This results in
+the following specification:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inside</span>(M, {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">branch</span>(model, <span class="st">&quot;linear&quot;</span> <span class="sc">~</span> <span class="fu">log</span>(death <span class="sc">+</span> <span class="dv">1</span>), <span class="st">&quot;poisson&quot;</span> <span class="sc">~</span> death) <span class="sc">~</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">branch</span>(main_interaction,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;no&quot;</span> <span class="sc">~</span> femininity <span class="sc">+</span> damage,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;yes&quot;</span> <span class="sc">~</span> femininity <span class="sc">*</span> damage</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span> <span class="fu">branch</span>(other_predictors,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;none&quot;</span> <span class="sc">~</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;pressure&quot;</span> <span class="sc">%when%</span> (main_interaction <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>) <span class="sc">~</span> femininity <span class="sc">*</span> zpressure,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wind&quot;</span> <span class="sc">%when%</span> (main_interaction <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>) <span class="sc">~</span> femininity <span class="sc">*</span> zwind,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;category&quot;</span> <span class="sc">%when%</span> (main_interaction <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>) <span class="sc">~</span> femininity <span class="sc">*</span> zcat,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;all&quot;</span> <span class="sc">%when%</span> (main_interaction <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>) <span class="sc">~</span> femininity <span class="sc">*</span> z3,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;all_no_interaction&quot;</span> <span class="sc">%when%</span> (main_interaction <span class="sc">==</span> <span class="st">&quot;no&quot;</span>) <span class="sc">~</span> z3</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span> <span class="fu">branch</span>(covariates, <span class="st">&quot;1&quot;</span> <span class="sc">~</span> <span class="cn">NULL</span>, <span class="st">&quot;2&quot;</span> <span class="sc">~</span> year<span class="sc">:</span>damage, <span class="st">&quot;3&quot;</span> <span class="sc">~</span> post<span class="sc">:</span>damage), </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="fu">branch</span>(model, <span class="st">&quot;linear&quot;</span> <span class="sc">~</span> <span class="st">&quot;gaussian&quot;</span>, <span class="st">&quot;poisson&quot;</span> <span class="sc">~</span> <span class="st">&quot;poisson&quot;</span>),  </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> df)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(fit)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+</div>
+<div id="execution" class="section level2">
+<h2>Execution</h2>
+<div id="sequential" class="section level3">
+<h3>Sequential</h3>
+<p>The most simple execution strategy would be to perform each
+computation sequentially, on one’s current machine. This is the default
+strategy, which can be used by simply calling
+<code>execute_multiverse()</code> on the current multiverse object.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute_multiverse</span>(M)</span></code></pre></div>
+<p>However, some studies have created multiverse analyses with thousands
+or even millions of unique specifications (universes). In such cases,
+the optimisation to avoid redundant computation that we have built into
+our solution for execution is insufficient, and sequential execution
+fails to make use of the embarrassingly abundant parallel processing
+resources.</p>
+</div>
+<div id="parallel-separate-r-sessions" class="section level3">
+<h3>Parallel: separate R sessions</h3>
+<p>To process multiverses in parallel, we make use of the <a href="https://cran.r-project.org/package=future">future</a> library.
+<code>future</code> allows the user to declare different strategies for
+resolving futures asynchronously and in parallel using
+<code>future::plan()</code>. The most general approach, which would work
+on both unix and non-unix based systems is to use a
+<code>multisession</code> future, which resolves futures asynchronously
+(in parallel) in separate R sessions running in the background on the
+same machine:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(multisession, <span class="at">workers =</span> <span class="fu">availableCores</span>())</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">execute_multiverse</span>(M, <span class="at">parallel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(sequential) <span class="co"># explicitly closes multisession workers by switching plan </span></span></code></pre></div>
+<p>Note: this vignette uses the <code>inside()</code> syntax to
+implement a multiverse. However, futures can be used with multiverse
+code blocks as well, and the steps involved in setup of asynchronous
+futures and execution would remain the same.</p>
+</div>
+<div id="parallel-separate-forked-processes" class="section level3">
+<h3>Parallel: separate forked processes</h3>
+<p>This strategy is similar to the mc*apply suite of functions in the
+<code>parallel</code> library. It resolves futures “asynchronously (in
+parallel) in separate forked R processes running in the background on
+the same machine”. However, this functionality is not supported on
+Windows (non-unix based system). Thus, we recommend using
+<code>multisession</code> instead.</p>
+</div>
+<div id="parallel-compute-clusters" class="section level3">
+<h3>Parallel: compute clusters</h3>
+<p><code>Future</code> also supports resolution in separate R sessions
+running on a compute cluster. “A cluster future is a future that uses
+cluster evaluation, which means that its value is computed and resolved
+in parallel in another process.”</p>
+</div>
+</div>
+<div id="what-if-i-want-to-execute-only-a-subset-of-the-specifications" class="section level2">
+<h2>What if I want to execute only a subset of the specifications?</h2>
+<p>For debugging purposes or otherwise, one might wonder if it is
+possible to execute only a small subset of <code>N</code> universes from
+the larger specified multiverse. Although we do not provide a specific
+function which supports this behavior, such a behavior can be easily
+achieved using the following workflow using the <code>lapply()</code>
+functions.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(x) <span class="fu">execute_universe</span>(M, x))</span></code></pre></div>
+<p>Alternatively, the same result can be obtained using the
+<code>purrr::map()</code> function:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="sc">~</span> <span class="fu">execute_universe</span>(M, .))</span></code></pre></div>
+<p>If we want to perform this operation in parallel, we could use
+<code>future.apply::future_lapply()</code> as follows:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(multisession, <span class="at">workers =</span> <span class="fu">availableCores</span>())</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>future.apply<span class="sc">::</span><span class="fu">future_lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(x) <span class="fu">execute_universe</span>(M, x))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(sequential)</span></code></pre></div>
+<p>For a detailed description on asynchronous resolution of futures and
+how to set up clusters, please refer to the documentation of the
+<code>future</code> library.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -39,7 +39,7 @@ inside(M_inside, {
 })
 
 ## ----echo = FALSE, out.width = '90%'------------------------------------------
-knitr::include_graphics("multiverse-addins.png")
+knitr::include_graphics("figures/01-multiverse-addins.png")
 
 ## ----default-m-1, inside = M_block, echo = FALSE, engine="multiverse"---------
 data_transform <- log
