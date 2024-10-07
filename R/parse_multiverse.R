@@ -23,28 +23,17 @@ globalVariables(c(".universe", ".parameter_assignment"))
 #' The list of conditions defines, if any of the parameter values are conditional on a specific value of another
 #' parameter, the condition.
 #'
-#' @importFrom purrr map
-#' @importFrom purrr map_dbl
 #' @importFrom purrr reduce
-#' @importFrom purrr safely
 #' @importFrom magrittr %>%
-#' @importFrom dplyr mutate
-#' @importFrom dplyr mutate_all
-#' @importFrom dplyr tibble
-#' @importFrom dplyr everything
 #' @importFrom dplyr filter
-#' @importFrom tibble tibble
-#' @importFrom tibble as_tibble
 #' @importFrom purrr compact
-#' @importFrom purrr map_chr
 #' @importFrom rlang parse_expr
-#' @importFrom rlang expr_deparse
 #' @importFrom rlang is_call
 #' @importFrom rlang is_empty
-#' @importFrom rlang expr_text
 #' @importFrom rlang f_rhs
 #' @importFrom rlang f_lhs
-#' @importFrom utils modifyList
+#' @importFrom rlang expr
+#' @importFrom rlang is_symbol
 #' @importFrom utils globalVariables
 #' @importFrom methods is
 #' 
@@ -92,14 +81,14 @@ parse_multiverse <- function(.multiverse, .expr, .code, .label) {
   
   .expr <- list(.expr)
   names(.expr) <- .label
-
+  
   q <- parse_multiverse_expr(.multiverse, .expr, rev(parameters), conditions, .parent_key)
-
+  
   # stores parameters and conditions in the multiverse object
   m_obj$parameters <- parameters
   m_obj$conditions <- conditions
   m_obj$parameter_set <- names(parameters)
-
+  
   invisible( m_obj$multiverse_diction$set(.label, q) )
 }
 
@@ -127,8 +116,14 @@ parse_multiverse_expr <- function(multiverse, .expr, .param_options, all_conditi
     lapply(seq_len(n), function(i) {
       .p <- lapply(df, "[[", i)
       
+      if (getOption("tree", 1)) {
+        .env = new.env(parent = .super_env)
+      } else {
+        .env = new.env(parent = globalenv())
+      }
+      
       list(
-        env = new.env(parent = .super_env),
+        env = .env,
         parent = 0,
         parameter_assignment = .p, 
         code = get_code(.expr, .p)
@@ -139,6 +134,9 @@ parse_multiverse_expr <- function(multiverse, .expr, .param_options, all_conditi
     
     q <- lapply(seq_along(parents), function(i, dat) {
       if (length(new_params) == 0) {
+        
+        # print(parents)
+        # print(class( parents[[i]]) )
         # implies no new parameters have been declared.
         # so number of child environments should be the same as the number of parent environments
         df <- data.frame(parents[[i]]$parameter_assignment)
@@ -157,8 +155,14 @@ parse_multiverse_expr <- function(multiverse, .expr, .param_options, all_conditi
       lapply(seq_len(n), function(j) {
         .p <- lapply(df, "[[", j)
         
+        if (getOption("tree", 1)) {
+          .env = new.env(parent = parents[[i]]$env)
+        } else {
+          .env = new.env(parent = globalenv())
+        }
+        
         list(
-          env = new.env(parent = parents[[i]]$env),
+          env = .env,
           parent = i,
           parameter_assignment = .p, 
           code = get_code(.expr, .p)
@@ -296,7 +300,7 @@ combine_parameter_conditions <- function(l1, l2) {
 }
 
 get_option_name <- function(x) {
- # if an option is empty
+  # if an option is empty
   if(x == "") stop("options cannot be empty. make sure your branch statement does not have empty options")
   
   # when option names are specified
@@ -319,7 +323,3 @@ get_option_name <- function(x) {
     create_name_from_expr(x, TRUE)
   }
 }
-
-
-
-

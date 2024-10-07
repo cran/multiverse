@@ -1,6 +1,4 @@
 # Tests to check if the single universe syntax tree can be extracted from the multiverse
-context("get_code")
-
 library(dplyr)
 
 set.seed(123)
@@ -81,9 +79,9 @@ test_that("can extract the option names from a branch", {
   lgl.2.ref = list("no_filter", "computed_25to35", "reported_25to35")
   lgl.3.ref = list("a", "1", "x + 1", "x^2", "TRUE")
 
-  expect_equal(map(an_expr.1[-1:-2], ~ get_option_name(.x)), lgl.1.ref)
-  expect_equal(map(an_expr.2[-1:-2], ~ get_option_name(.x)), lgl.2.ref)
-  expect_equal(map(an_expr.3[-1:-2], ~ get_option_name(.x)), lgl.3.ref)
+  expect_equal(map(as.list(an_expr.1[-1:-2]), ~ get_option_name(.x)), lgl.1.ref)
+  expect_equal(map(as.list(an_expr.2[-1:-2]), ~ get_option_name(.x)), lgl.2.ref)
+  expect_equal(map(as.list(an_expr.3[-1:-2]), ~ get_option_name(.x)), lgl.3.ref)
 })
 
 test_that("exact matching occurs when extracting options_names from a assignment", {
@@ -165,8 +163,9 @@ test_that("throws error if multiverse object passed is not R6", {
 })
 
 test_that("syntax tree without branches is correctly returned", {
-  an_expr <- list( `1` = quote({df <- test_df  %>%
-    mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast )}) )
+  an_expr <- quote({df <- test_df  %>%
+    mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast )}) %>%
+    list()
 
   M.no_branch = multiverse()
 
@@ -174,8 +173,10 @@ test_that("syntax tree without branches is correctly returned", {
     df <- test_df %>%
       mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast )
   }))
+  
+  .c = attr(M.no_branch, "multiverse")[['code']]
 
-  expect_equal(code(M.no_branch), an_expr)
+  expect_equal(unname(.c), an_expr)
 })
 
 test_that("syntax tree for each universe is computed correctly", {
@@ -301,10 +302,12 @@ test_that("syntax tree with branches is correctly returned when a parameter is a
     certainty = "cer_option1",
     fertile = "fer_option4"
   )
+  
+  .c = attr(M, "multiverse")[['code']]
 
-  u.expr = lapply(code(M), get_parameter_code, param.assgn)
+  u.expr = lapply(.c, get_parameter_code, param.assgn)
 
-  u.expr.ref = list(`1` = quote({
+  u.expr.ref = quote({
     df <- test_df  %>%
       mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast ) %>%
       mutate( NextMenstrualOnset = StartDateofLastPeriod + ComputedCycleLength ) %>%
@@ -316,9 +319,10 @@ test_that("syntax tree with branches is correctly returned when a parameter is a
       dplyr::filter( ComputedCycleLength > 25 & ComputedCycleLength < 35 ) %>%
       dplyr::filter( TRUE ) %>%
       mutate( Fertility = factor( ifelse(CycleDay >= 8 & CycleDay <= 17, "high", "low") ) )
-  }))
+  }) %>%
+    list()
 
-  expect_equal(u.expr, u.expr.ref)
+  expect_equal(unname(u.expr), u.expr.ref)
 })
 
 test_that("is able to handle missing values passed as index to lists / df / matrices", {

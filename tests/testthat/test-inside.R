@@ -1,6 +1,5 @@
 # Tests to verify if expressions can be passed to the multiverse
 # and if passed expressions are stored properly
-context("inside")
 
 library(rlang)
 library(purrr)
@@ -14,7 +13,7 @@ test_that("inside works on new multiverse object", {
     x = data.frame(x = 1:10)
   })
 
-  expect_equal( code(M), an_expr )
+  expect_equal( attr(M, 'multiverse')[['code']], an_expr )
 })
 
 test_that("multiple lines of code can be passed to inside", {
@@ -32,7 +31,7 @@ test_that("multiple lines of code can be passed to inside", {
     y = data.frame(y = 11:20)
   })
 
-  expect_equal( code(M), some_exprs)
+  expect_equal( attr(M, 'multiverse')[['code']], some_exprs)
 })
 
 test_that("multiple lines of code can be passed to inside in a single block", {
@@ -49,7 +48,7 @@ test_that("multiple lines of code can be passed to inside in a single block", {
     y <- data.frame(y = 11:20)
   })
   
-  expect_equal( code(M), some_exprs)
+  expect_equal( attr(M, 'multiverse')[['code']], some_exprs)
 })
 
 test_that("throws error when object is not of type `multiverse`", {
@@ -74,8 +73,8 @@ test_that("`add_and_parse_code` stores code as a list of `language`", {
   add_and_parse_code(M, expr.1)
   add_and_parse_code(M, expr.2)
 
-  expect_true( is.list(code(M)) )
-  expect_true( all(map_lgl(code(M), is.language)) )
+  expect_true( is.list(attr(M, 'multiverse')[['code']]) )
+  expect_true( all(map_lgl(attr(M, 'multiverse')[['code']], is.language)) )
 })
 
 test_that("`add_and_parse_code` parses the code", {
@@ -120,7 +119,7 @@ test_that("`inside` does not execute the default analysis when specified as such
   })
   
   M = multiverse()
-  inside(M, !!an_expr, .execute_default = F)
+  inside(M, !!an_expr, .execute_default = FALSE)
   expect_error(M$x, "object 'x' not found")
 })
 
@@ -170,6 +169,64 @@ test_that("inside cannot access variables which is not accessible from the envir
   }
   
   expect_warning(myfun())
+})
+
+test_that("multiverse with labels are correctly created and execution does not impact", {
+  M <- multiverse()
+  
+  inside(M, {
+    df <- tibble(x = 1:5)
+    df <- df %>%
+      mutate(y = branch(times,
+                        "2" ~ x*2,
+                        "3" ~ x*3,
+                        "4" ~ x*4
+      ))
+  }, .label = "b1")
+  
+  inside(M, {
+    df <- df %>%
+      mutate(z = branch(exp,
+                        "2" %when% (times != "3") ~ x^2,
+                        "3" ~ x^3,
+                        "4" ~ x^4
+      ))
+  }, .label = "b2")
+  
+  m_list = attr(M, "multiverse")$multiverse_diction$as_list()
+  expect_equal(names(m_list), c("b1", "b2"))
+  
+  execute_multiverse(M)
+  expect_equal(names(m_list), c("b1", "b2"))
+})
+
+test_that("multiverse with labels are correctly created and execution does not impact #2", {
+  M <- multiverse()
+  
+  inside(M, {
+    df <- tibble(x = 1:5)
+    df <- df %>%
+      mutate(y = branch(times,
+                        "2" ~ x*2,
+                        "3" ~ x*3,
+                        "4" ~ x*4
+      ))
+  }, .label = "b1", .execute_default = FALSE)
+  
+  inside(M, {
+    df <- df %>%
+      mutate(z = branch(exp,
+                        "2" %when% (times != "3") ~ x^2,
+                        "3" ~ x^3,
+                        "4" ~ x^4
+      ))
+  }, .label = "b2", .execute_default = FALSE)
+  
+  m_list = attr(M, "multiverse")$multiverse_diction$as_list()
+  expect_equal(names(m_list), c("b1", "b2"))
+  
+  execute_multiverse(M)
+  expect_equal(names(m_list), c("b1", "b2"))
 })
 
 

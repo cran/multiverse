@@ -1,5 +1,4 @@
 # Tests for multiverse object
-context("multiverse")
 
 library(dplyr)
 library(purrr)
@@ -28,7 +27,7 @@ test_that("new multiverse object is initialised properly", {
 test_that("accessor functions work on newly initialised object", {
   m_tbl <- expand(M)
   
-  expect_null(code(M))
+  expect_equal(code(M), NULL)
   expect_warning( expect_mapequal( parameters(M), list()) )
   expect_warning( expect_mapequal( conditions(M), list()) )
   expect_true( is.data.frame(m_tbl) )
@@ -86,8 +85,8 @@ test_that("accessor functions for getting default code", {
       )
   })
 
-  expect_true( all(map_lgl(code(M.2), is.language)) )
-  expect_equal( code(M.2), list(`1` = ref_code) )
+  expect_true( all(map_lgl(attr(M.2, "multiverse")[['code']], is.language)) )
+  expect_equal( attr(M.2, "multiverse")[['code']], list(`1` = ref_code) )
 })
 
 test_that("accessor function for parameter list", {

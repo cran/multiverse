@@ -3,6 +3,8 @@
 #' @importFrom utils head
 #' @importFrom utils tail
 #' @importFrom formatR tidy_source
+#' @importFrom purrr map_chr
+#' @importFrom rlang is_condition
 #' 
 multiverse_engine <- function(options) {
   if(is.null(options$inside)) stop("A multiverse object should be specified with", 
@@ -48,8 +50,6 @@ multiverse_engine <- function(options) {
 }
 
 multiverse_block_code <- function(.multiverse, .label, .code) {
-  # .multiverse = get(.multiverse_name, envir = knit_global())
-  
   if (strsplit(.label, "-[0-9]+") == "unnamed-chunk") {
     stop("Please provide a label to your multiverse code block")
   }
@@ -82,7 +82,6 @@ multiverse_default_block_exec <- function(.code, options, knit = FALSE) {
   # skip all these steps while knitting.
   if (knit && options$eval) {
     .multiverse = options$inside
-    # execute_multiverse(.multiverse)
     
     # when knitting we are not performing any traditional evaluation
     # hence we can not evaluate the code chunk using default evaluation
@@ -91,45 +90,47 @@ multiverse_default_block_exec <- function(.code, options, knit = FALSE) {
     # What we want is to create a `div` for each universe
     # options$eval = TRUE
     # options$class.source = "multiverse"
-
+    options$eval = FALSE
     options$engine = "R"
     options$comment = ""
     options$dev = 'png'
     
+    eng_r = knit_engines$get("R")
+    
+    if (getOption("multiverse_code_blocks", 1) == "asis") {
+      return(eng_r(options))
+    }
+
     # if (options$eval != FALSE) {
     options_list <- lapply(1:size(.multiverse), function(x) {
       temp_options <- options
       temp_options$code = tidy_source(text = map_chr(
-        tail(head(deparse(expand(.multiverse)[[".code"]][[x]][[options$label]]), -1), -1), 
+        tail(head(deparse(expand(.multiverse)[[".code"]][[x]][[options$label]]), -1), -1),
         ~ gsub(pattern = " ", replacement = "", x = .)
       ))$text.tidy
-    
+
       # assuming default is the first universe,
       # conditional should be change to use the default universe argument
-      if (x == 1) { 
+      if (x == 1) {
           temp_options$class.source = paste0("multiverse universe-", x, " default")
           temp_options$class.output = paste0("multiverse universe-", x, " default")
       } else {
           temp_options$class.source = paste0("multiverse universe-", x, "")
           temp_options$class.output = paste0("multiverse universe-", x, "")
       }
-      
+
       temp_options
     })
-    eng_r = knit_engines$get("R")
+    
     unlist(lapply(options_list, eng_r))
-    # }
   } else {
     # when in interactive mode, execute the default analysis in the knitr global environment
-    
-    # first and last elements of `code` are "{" and "}" so we have to strip them.
-    # (otherwise only the last thing would be printed as the entire expression would
-    # only return one object)
-    code = .code[-c(1, length(.code))]
     
     # when not knitting (i.e. interactive mode) we just use evaluate()
     # to evaluate the various pieces of code in the code chunk and return
     # the output strings from each line of code.
+    code = .code[-c(1, length(.code))]
+      
     outputs = evaluate::evaluate(
       code, 
       # must have new_device = FALSE otherwise plots don't seem to be written to
@@ -141,9 +142,8 @@ multiverse_default_block_exec <- function(.code, options, knit = FALSE) {
     # only output character vectors and conditions (warnings, etc) values (not plots or
     # source code) here, as everything else (e.g. graphics, messages) will have already
     # been output during evaluate()
-    outputs[sapply(outputs, function(x) is.character(x) || is_condition(x))]
+    Filter(function(x) is.character(x) || is_condition(x), outputs)
   }
 }
 
 knitr::knit_engines$set(multiverse = multiverse_engine)
-

@@ -1,5 +1,3 @@
-context("accessors")
-
 library(dplyr)
 library(tidyr)
 
@@ -15,6 +13,9 @@ test_that("basic retrieval with `$` returns correct output", {
     x = 5
     y = "a"
   })
+  inside(M, {
+    z = 2
+  })
   expect_equal(M$x, 5)
   expect_equal(M$y, "a")
 })
@@ -23,7 +24,7 @@ test_that("basic retrieval with `code()` returns correct output", {
   M <- multiverse()
   inside(M, {x <- 5})
 
-  expect_equal(unname(code(M)), list(quote({ x <- 5 })) )
+  expect_equal(unname(code(M)), style_multiverse_code(quote({x <- 5})) )
 })
 
 test_that("`code()` throws error for objects of class other than multiverse", {

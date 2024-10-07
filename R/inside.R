@@ -55,23 +55,6 @@
 #'   ))
 #' })
 #'
-#' M.2 <- multiverse()
-#'
-#' # using the assignment operator to declare multiverse code
-#' inside(M.2, {
-#'     data <- rnorm(100, 50, 20)
-#' }) 
-#' 
-#' inside(M.2, {
-#'     mean <- mean(data, trim = branch(
-#'     trim_values,
-#'     "trim_none" ~ 0,
-#'     "trim_1pc" ~ 0.05,
-#'     "trim_5pc" ~ 0.025,
-#'     "trim_10pc" ~ 0.05
-#'   ))
-#' })
-#'
 #' # declaring multiple options for a data processing step (calculating a new variable)
 #' data(durante)
 #' df <- durante
@@ -88,9 +71,11 @@
 #'
 #' }
 #'
-#' @import rlang
-#' @importFrom magrittr %>%
-#' @importFrom magrittr inset2
+#' @importFrom rlang is_call
+#' @importFrom rlang enexpr
+#' @importFrom rlang is_null
+#' @importFrom magrittr inset
+#' @importFrom purrr map
 #'
 #' @name inside
 #' @export
@@ -104,7 +89,7 @@ inside <- function(multiverse, .expr, .label = NULL, .execute_default = TRUE) {
   # direct calls to inside() by the user result in execution of the
   # default universe in the global environment.
   if (.execute_default) {
-    execute_universe(multiverse)
+    invisible( execute_universe(multiverse) )
   }
 }
 
@@ -191,7 +176,7 @@ expand_branch_options <- function(.expr) {
       }
       return(.new_expr)
     } else {
-      as.call(map(.expr, ~ expand_branch_options(.x)))
+      as.call(map(as.list(.expr), ~ expand_branch_options(.x)))
     }
   } else {
     .expr

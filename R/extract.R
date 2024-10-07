@@ -1,3 +1,4 @@
+globalVariables(c("extracted", "extracted_id"))
 #' Extract variables and objects from the multiverse
 #' 
 #' This is a wrapper function for extracting one or more variables and objects declared from within the multiverse
@@ -36,6 +37,8 @@
 #'     "trim_5pc" ~ 0.025,
 #'     "trim_10pc" ~ 0.05
 #'   ))
+#'   
+#'   y <- sd(data)
 #' })
 #'
 #' # Extracts the relevant variable from the multiverse
@@ -46,10 +49,19 @@
 #' # you ca first create the table and manipulate it before extracting variables
 #' expand(M) %>%
 #'   extract_variables(x.mean)
+#'
+#' # you can extract more than one variable from the multiverse simultaneously
+#' # these variables will be new columns in the dataset
+#' expand(M) %>%
+#'   extract_variables(x.mean, y)
 #' }
 #' 
-#' @importFrom tidyselect vars_pull
-#' @importFrom tidyr unnest_wider
+#' @importFrom tidyr unnest_longer
+#' @importFrom tidyr pivot_wider
+#' @importFrom dplyr mutate
+#' @importFrom rlang enquo
+#' @importFrom rlang enquos
+#' @importFrom rlang as_name
 #'
 #' @export
 extract_variables <- function(x, ..., .results = .results) {
@@ -59,7 +71,7 @@ extract_variables <- function(x, ..., .results = .results) {
 #' @rdname extract_variables
 #' @export
 extract_variables.multiverse <- function(x, ..., .results = .results) {
-  expand(x) %>%
+  expand(x) |> 
     extract_variables(..., .results = .results)
 }
 
@@ -70,17 +82,18 @@ extract_variables.data.frame <- function(x, ..., .results = .results) {
   
   mutate(
     x, extracted = lapply(!!.results, extract_from_env, ...)
-  ) %>%
-    unnest_wider("extracted")
+  ) |> 
+  unnest_longer(extracted) |> 
+  pivot_wider(names_from = extracted_id, values_from = extracted)
 }
 
 extract_from_env <- function(.env, ...) {
-  pluck <- lapply(enquos(...), as_name)
+  .to_pluck <- lapply(enquos(...), as_name)
   
-  y <- lapply(pluck, function(x) {
+  y <- lapply(.to_pluck, function(x) {
     e <- tryCatch(get(as.character(x), .env), error = function(e) e)
     if (is(e, "error")) NA else e
   })
-  names(y) <- pluck
+  names(y) <- .to_pluck
   y
 }

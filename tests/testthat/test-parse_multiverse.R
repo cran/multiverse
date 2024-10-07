@@ -1,6 +1,5 @@
 # Tests for succesfully parsing the expressions passed into the multiverse
 # to identify parameters and branches (values for each parameter)
-context("parse_multiverse")
 
 library(rlang)
 library(tidyr)
@@ -128,9 +127,9 @@ test_that("`get_parameter_conditions` returns an empty list when input expressio
     df <- test_df %>%
       mutate( ComputedCycleLength = StartDateofLastPeriod - StartDateofPeriodBeforeLast )
   })
-
-  a_list.no_branch = expect_warning(flatten(get_parameter_conditions(an_expr)))
-  expect_equal(a_list.no_branch, list())
+  
+  # a_list.no_branch = expect_warning(flatten(get_parameter_conditions(an_expr)))
+  expect_equal(get_parameter_conditions(an_expr), list(parameters = list(), conditions = list()))
 })
 
 test_that("`get_parameter_conditions` returns the correct output (list) when input expression has a single branch", {
@@ -244,7 +243,7 @@ test_that("`get_condition` is able to extract conditions in the correct format",
                         "sum" ~ (x + y) %when% (value_y == TRUE)
   ))
 
-  conditions_list = map(an_expr[-1:-2], ~ get_condition(.x, 'value_z'))
+  conditions_list = map(as.list(an_expr[-1:-2]), ~ get_condition(.x, 'value_z'))
   conditions_list.ref = list(NULL, NULL, expr(("value_z" != "sum" | (value_y == TRUE))))
 
   expect_equal(conditions_list, conditions_list.ref)
@@ -257,7 +256,7 @@ test_that("`get_condition` is able to extract conditions in the correct format",
                         (x + y) %when% (value_y == TRUE)
   ))
 
-  conditions_list = map(an_expr[-1:-2], ~ get_condition(.x, 'value_z'))
+  conditions_list = map(as.list(an_expr[-1:-2]), ~ get_condition(.x, 'value_z'))
   conditions_list.ref = list(NULL, NULL, expr(("value_z" != "(x + y)" | (value_y == TRUE))))
 
   expect_equal(conditions_list, conditions_list.ref)
@@ -279,8 +278,8 @@ test_that("`get_condition` ignores `%when%` if assigned to subexpression of an o
 
   ref = list( NULL, NULL, expr( ("value_z" != "sum" | (values_y == TRUE)) ), NULL)
 
-  expect_equal( map(an_expr.1[-1:-2], ~ get_condition(.x, 'value_z')), ref )
-  expect_equal( map(an_expr.2[-1:-2], ~ get_condition(.x, 'value_z')), ref )
+  expect_equal( map(as.list(an_expr.1[-1:-2]), ~ get_condition(.x, 'value_z')), ref )
+  expect_equal( map(as.list(an_expr.2[-1:-2]), ~ get_condition(.x, 'value_z')), ref )
 })
 
 

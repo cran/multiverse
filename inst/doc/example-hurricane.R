@@ -1,7 +1,7 @@
 params <-
 list(EVAL = TRUE)
 
-## ---- chunk-setup, include=FALSE----------------------------------------------
+## ----chunk-setup, include=FALSE-----------------------------------------------
 knitr::opts_chunk$set(
   echo = TRUE,
   eval = if (isTRUE(exists("params"))) params$EVAL else FALSE,
@@ -21,7 +21,7 @@ library(multiverse)
 data("hurricane")
 
 # read and process data
-hurricane_data <- hurricane %>%
+hurricane_data <- hurricane |>
     # rename some variables
     rename(
         year = Year,
@@ -33,7 +33,7 @@ hurricane_data <- hurricane %>%
         category = Category,
         pressure = Minpressure_Updated_2014,
         wind = HighestWindSpeed
-    ) %>%
+    ) |>
     # create new variables
     mutate(
         post = ifelse(year>1979, 1, 0),
@@ -44,7 +44,7 @@ hurricane_data <- hurricane %>%
     )
 
 ## -----------------------------------------------------------------------------
-df <- hurricane_data %>%
+df <- hurricane_data |>
     filter( name != "Katrina" & name != "Audrey" )
 
 fit <- glm(death ~ masfem * dam + masfem * zpressure, data = df, family = "poisson")
@@ -52,18 +52,18 @@ fit <- glm(death ~ masfem * dam + masfem * zpressure, data = df, family = "poiss
 ## -----------------------------------------------------------------------------
 M <- multiverse()
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 # when building package vignettes this creates a
 # smaller hurricane.R file in the ./inst/doc/ directory
 # otherwise we may get a NOTE saying installed package 
 # size is greater than 5Mb
 inside(M, {
-  df <- hurricane_data %>%
+  df <- hurricane_data |>
     filter(branch(death_outliers, 
         "no_exclusion" ~ TRUE,
         "most_extreme_deaths" ~ name != "Katrina",
         "most_extreme_two_deaths" ~ ! (name %in% c("Katrina", "Audrey"))
-    )) %>%
+    )) |>
     filter(branch(damage_outliers,
         "no_exclusion" ~ TRUE,
         "most_extreme_one_damage" ~ ! (name %in% c("Sandy")),
@@ -71,7 +71,7 @@ inside(M, {
         "most_extreme_three_damage" ~ ! (name %in% c("Sandy", "Andrew", "Donna"))
     ))
   
-  df <- df %>%
+  df <- df |>
     mutate(
         femininity = branch(femininity_calculation,
           "masfem" ~ masfem,
@@ -104,7 +104,7 @@ inside(M, {
       branch(model, "linear" ~ exp(mu + sigma^2/2) - 1, "poisson" ~ mu)
   }
   
-  disagg_fit <- df  %>%
+  disagg_fit <- df  |>
       mutate(
           fitted = pred$fit,                                # add fitted predictions and standard errors to dataframe
           se.fit = pred$se.fit,
@@ -114,23 +114,23 @@ inside(M, {
       )
   
   # aggregate fitted effect of female storm name
-  expectation <- disagg_fit %>%
-      mutate(expected_deaths = pred2expectation(fitted, sigma)) %>% 
-      group_by(female) %>%
-      summarise(mean_deaths = mean(expected_deaths), .groups = "drop_last") %>% 
+  expectation <- disagg_fit |>
+      mutate(expected_deaths = pred2expectation(fitted, sigma)) |> 
+      group_by(female) |>
+      summarise(mean_deaths = mean(expected_deaths), .groups = "drop_last") |> 
       compare_levels(mean_deaths, by = female)
 })
 
-## ---- fig.height=3, fig.width = 8---------------------------------------------
+## ----fig.height=3, fig.width = 8----------------------------------------------
 execute_multiverse(M)
 
-mean_deaths <- multiverse::expand(M) %>%
-  extract_variables(expectation) %>%
+mean_deaths <- multiverse::expand(M) |>
+  extract_variables(expectation) |>
   unnest(expectation)
 
-mean_deaths %>%
-  arrange(mean_deaths) %>%
-  mutate(.id = 1:nrow(.)) %>%
+mean_deaths |>
+  arrange(mean_deaths) |>
+  mutate(.id = row_number()) |>
   ggplot(aes(y = mean_deaths, x = .id)) +
   geom_point() +
   theme_minimal() +

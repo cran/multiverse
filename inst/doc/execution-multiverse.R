@@ -11,7 +11,7 @@ library(multiverse)
 ## -----------------------------------------------------------------------------
 data(hurricane)
 
-hurricane_data <- hurricane %>%
+hurricane_data <- hurricane |>
   # rename some variables
   rename(
       year = Year,
@@ -23,7 +23,7 @@ hurricane_data <- hurricane %>%
       category = Category,
       pressure = Minpressure_Updated_2014,
       wind = HighestWindSpeed
-  ) %>%
+  ) |>
   # create new variables
   mutate(
       post = ifelse(year>1979, 1, 0),
@@ -37,12 +37,12 @@ M = multiverse()
 
 ## -----------------------------------------------------------------------------
 inside(M, {
-  df <- hurricane_data %>%
+  df <- hurricane_data |>
     filter(branch(death_outliers, 
         "no_exclusion" ~ TRUE,
         "most_extreme_deaths" ~ name != "Katrina",
         "most_extreme_two_deaths" ~ ! (name %in% c("Katrina", "Audrey"))
-    )) %>%
+    )) |>
     filter(branch(damage_outliers,
         "no_exclusion" ~ TRUE,
         "most_extreme_one_damage" ~ ! (name %in% c("Sandy")),
@@ -53,7 +53,7 @@ inside(M, {
 
 ## -----------------------------------------------------------------------------
 inside(M, {
-  df <- df %>%
+  df <- df |>
     mutate(
         femininity = branch(femininity_calculation,
           "masfem" ~ masfem,
@@ -86,23 +86,23 @@ inside(M, {
   res <- broom::tidy(fit)
 })
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  execute_multiverse(M)
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  plan(multisession, workers = availableCores())
 #  execute_multiverse(M, parallel = TRUE)
 #  plan(sequential) # explicitly closes multisession workers by switching plan
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  N = 5
 #  lapply(1:5, function(x) execute_universe(M, x))
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  purrr::map(1:N, ~ execute_universe(M, .))
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  plan(multisession, workers = availableCores())
-#  future.apply::future_lapply(1:5, function(x) execute_universe(M, x))
+#  furrr::future_map(1:5, function(x) execute_universe(M, x))
 #  plan(sequential)
 

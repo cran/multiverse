@@ -16,14 +16,11 @@
 #' @param .assgn A list containing the assignments for each defined parameter in the multiverse
 #'
 #' @importFrom rlang f_rhs
-#' @importFrom rlang f_lhs
 #' @importFrom rlang is_missing 
-#' @importFrom magrittr %>%
 #' @importFrom magrittr extract2
 #'
 # wrapper function for get_parameter_code
 get_code <- function(.code, .assgn = NULL) {
-  # print(.code)
   lapply(.code, get_parameter_code, .assgn)
 }
 
@@ -85,9 +82,6 @@ compute_branch <- function(.expr, .assgn) {
 
   param_assignment <- unlist(lapply(option_names, function(x) x == assigned_parameter_option_name))
   
-  # print(.expr[-1:-2])
-  # print(param_assignment)
-  # print(extract2(.expr[-1:-2], which(param_assignment, arr.ind = TRUE)))
   get_option_value(extract2(.expr[-1:-2], which(param_assignment, arr.ind = TRUE)))
 }
 

@@ -40,8 +40,14 @@ syntax.
 
 ## Installation
 
-You can install the latest development version from GitHub with these R
-commands:
+You can install the package from CRAN:
+
+``` r
+install.packages("multiverse")
+```
+
+To install the latest development version from GitHub, you can use these
+R commands:
 
 ``` r
 install.packages("devtools")
@@ -85,13 +91,13 @@ found in the package
     Animations](https://explorablemultiverse.github.io/examples/dance/)
     (from [Increasing the transparency of research papers with
     explorable multiverse
-    analyses](https://hal.inria.fr/hal-01976951/document) )
+    analyses](https://inria.hal.science/hal-01976951/document) )
 -   Dragicevic et al.’s mini-paper [Re-evaluating the efficiency of
     Physical
     Visualisations](https://explorablemultiverse.github.io/examples/frequentist/)
     (from [Increasing the transparency of research papers with
     explorable multiverse
-    analyses](https://hal.inria.fr/hal-01976951/document) )
+    analyses](https://inria.hal.science/hal-01976951/document) )
 
 ## Example analysis
 
@@ -109,7 +115,7 @@ multiverse analysis. We adopt the “tree of analysis” metaphor (see
 Figure below): “an analysis proceeds from top to bottom, and each
 branching represents a choice between different analysis options”.
 
-<img src="vignettes/figures/00-reporting-strategies.png" width="60%" />
+<img src="man/figures/00-reporting-strategies.png" width="60%" />
 
 In this terminology:
 
@@ -140,7 +146,7 @@ command.
 
 ``` r
 data("hurricane")
-hurricane_data <- hurricane %>%
+hurricane_data <- hurricane |>
     # rename some variables
     rename(
         year = Year,
@@ -152,7 +158,7 @@ hurricane_data <- hurricane %>%
         category = Category,
         pressure = Minpressure_Updated_2014,
         wind = HighestWindSpeed
-    ) %>%
+    ) |>
     # create new variables
     # which are relevant later on
     mutate(
@@ -167,7 +173,7 @@ hurricane_data <- hurricane %>%
 The data look like this:
 
 ``` r
-hurricane_data %>%
+hurricane_data |>
   head()
 #>   year     name  masfem MinPressure_before pressure female category death wind
 #> 1 1950     Easy 5.40625                958      960      0        3     2  125
@@ -201,8 +207,8 @@ The following code block contains the steps involved in implementing the
 original analysis:
 
 ``` r
-df.filtered = hurricane_data %>% 
-  filter(name != "Katrina" & name != "Audrey") %>%
+df.filtered = hurricane_data |> 
+  filter(name != "Katrina" & name != "Audrey") |>
   mutate(zpressure = -scale(pressure))
 
 fit = glm(
@@ -217,24 +223,28 @@ The result below indicates that there is a small but positive effect of
 controlled for damages. This appears to support the original hypothesis.
 
 ``` r
-tidy(fit) %>%
-  filter(term != "(Intercept)") %>%
+tidy(fit) |>
+  filter(term != "(Intercept)") |>
   ggplot() +
   geom_vline(xintercept = 0, color = "red") +
   geom_pointinterval(aes(x = estimate, y = term, xmin = estimate + qnorm(0.025)*std.error, xmax = estimate + qnorm(0.975)*std.error)) +
   theme_minimal()
 ```
 
-![results from a single analysis: point estimates and 95% confidence
-intervals of all the coefficients of the
-predictors](man/figures/universe-summary-1.png)
+<figure>
+<img src="man/figures/universe-summary-1.png"
+alt="results from a single analysis: point estimates and 95% confidence intervals of all the coefficients of the predictors" />
+<figcaption aria-hidden="true">results from a single analysis: point
+estimates and 95% confidence intervals of all the coefficients of the
+predictors</figcaption>
+</figure>
 
 However, the original analysis involved at least four analysis decisions
 (A-D), and at each decision point (node) alternative choices may have
 led to a different result. These decisions are highlighted in the figure
 below:
 
-<img src="vignettes/figures/00-default-analysis.png" width="90%" />
+<img src="man/figures/00-default-analysis.png" width="90%" />
 
 Several subsequent studies, each proposing a different analysis
 strategy, found no presence of such an effect, suggesting that the
@@ -280,7 +290,7 @@ executed in a special environment. To be more precise, `multiverse`
 takes the user declared code, parses and rewrites the code into multiple
 versions of valid R code, each corresponding to an unique analysis path
 in the multiverse. For more information on this processing step, see
-vignette(branch)
+`vignette("branch")`
 
 To get around these limitations, we need to declare this (multiverse
 DSL) code “inside a multiverse object”. The `multiverse` package
@@ -304,7 +314,7 @@ languages have dedicated code blocks. We extend this by providing
 [*multiverse code
 blocks*](https://mucollective.github.io/multiverse/articles/multiverse-in-rmd.html)
 which can be used instead of the regular `r` code block to write code
-inside a multiverse object (see \\link{multiverse-in-rmd} for more
+inside a multiverse object (see \link{multiverse-in-rmd} for more
 details on using the multiverse code blocks with RMarkdown). A
 *multiverse code block* is a custom engine designed to work with the
 `multiverse` package, to implement the multiverse analyses. This allows
@@ -319,7 +329,7 @@ executing the code below will throw an error***)
     df = hurricane_data
 
     # here, we perform a `filter` operation in the multiverse
-    df.filtered = df %>%
+    df.filtered = df |>
       filter(branch(death_outliers,
           "no_exclusion" ~ TRUE,
           "most_extreme" ~ name != "Katrina",
@@ -339,7 +349,7 @@ RStudio. Users can click on *AddIns* toolbar menu in RStudio (see the
 image below). This would create a multiverse code block at the location
 of the cursor in the document.
 
-<img src="vignettes/figures/01-multiverse-addins.png" width="90%" />
+<img src="man/figures/01-multiverse-addins.png" width="90%" />
 
 Alternately, users can insert a multiverse code block using a keyboard
 shortcut. Users can create a keyboard shortcut to declare a multiverse
@@ -348,11 +358,12 @@ code block inside a RMarkdown document through the following steps:
 -   Tools \> Addins \> Browse Addins… \> Keyboard Shortcuts
 -   Next, in the filter input field, type *multiverse*. You will see one
     result with “Insert multiverse code chunk” as the name.
--   Click on the Shortcut field and press Cmd+Option+M (on Mac OS) or
-    Ctrl+Shift+Alt+M (on Windows).
+-   Click on the Shortcut field and press Cmd+Ctrl+M (on Mac OS) or
+    Ctrl+Shift+Alt+M (on Windows). Note that these are the recommended
+    shortcuts, but you should feel free to use whatever you prefer.
 -   Click “Apply” and exit the dialog box
 
-Please refer to \\link{multiverse-in-rmd} for more details on using the
+Please refer to \link{multiverse-in-rmd} for more details on using the
 multiverse code blocks with RMarkdown. The vignette also contains
 information on steps for debugging some of the common problems in
 assigning keyboard shortcuts.
@@ -373,13 +384,13 @@ If a user is working with an RScript, the previous code can be declared
 
 ``` r
 # here we just create the variable `df` in the multiverse
-inside(M, df = hurricane_data)
+inside(M, { df = hurricane_data })
 
 # here, we perform two `mutate` operations in the multiverse.
 # although they could have been chained, this illustrates 
 # how multiple variables can be declared together using the `{}`
 inside(M, {
-  df.filtered = df %>%
+  df.filtered = df |>
     filter(branch(death_outliers,
         "no_exclusion" ~ TRUE,
         "most_extreme" ~ name != "Katrina",
@@ -405,7 +416,7 @@ possible. Consider these first few lines from the transformation code in
 the single analysis above:
 
 ``` r
-df.filtered = hurricane_data %>% 
+df.filtered = hurricane_data |> 
   filter(name != "Katrina" & name != "Audrey")
 ```
 
@@ -442,7 +453,7 @@ thus be declared as:
     df = hurricane_data
 
     # here, we perform a `filter` operation in the multiverse
-    df.filtered = df %>%
+    df.filtered = df |>
       filter(branch(death_outliers,
           "no_exclusion" ~ TRUE,
           "most_extreme" ~ name != "Katrina",
@@ -454,10 +465,10 @@ The `multiverse` library then takes this user-declared syntax in the
 multiverse DSL and and compiles it into three separate, executable R
 expressions as shown in the figure below:
 
-<img src="vignettes/figures/02-branch.png" width="90%" />
+<img src="man/figures/02-branch.png" width="90%" />
 
 More details on the `branch()` function can be found in the
-corresponding `vignette(branch)`.
+corresponding `vignette("branch")`.
 
 ## Interfacing with the multiverse
 
@@ -512,13 +523,19 @@ expand(M)
 
 ``` r
 code(M)
-#> $branch_definition
-#> {
-#>     df = hurricane_data
-#>     df.filtered = df %>% filter(branch(death_outliers, "no_exclusion" ~ 
-#>         TRUE, "most_extreme" ~ name != "Katrina", "two_most_extreme" ~ 
-#>         !(name %in% c("Katrina", "Audrey"))))
-#> }
+#> [[1]]
+#> df <- hurricane_data
+#> 
+#> [[2]]
+#> df.filtered <- filter(
+#>   df,
+#>   branch(
+#>     death_outliers,
+#>     "no_exclusion" ~ TRUE,
+#>     "most_extreme" ~ name != "Katrina",
+#>     "two_most_extreme" ~ !(name %in% c("Katrina", "Audrey"))
+#>   )
+#> )
 ```
 
 1.  `extract_variables(M, <variable names>)` extracts the supplied
@@ -538,7 +555,7 @@ extract_variables(M, df.filtered)
 #> 1         1 no_exclusion     <named list [1]>      <named list> <env>    <lgl>  
 #> 2         2 most_extreme     <named list [1]>      <named list> <env>    <lgl>  
 #> 3         3 two_most_extreme <named list [1]>      <named list> <env>    <lgl>  
-#> # … with 1 more variable: df.filtered <list>
+#> # ℹ 1 more variable: df.filtered <named list>
 ```
 
 ## Building up a complete analysis
@@ -558,7 +575,7 @@ researchers could have:
 This would result in 3 × 2 × 2 = 12 analysis paths.
 
     ```{multiverse label = variable_definitions, inside = M}
-        df.filtered <- df.filtered %>%
+        df.filtered <- df.filtered |>
             mutate(
                 femininity = branch(femininity_calculation,
                   "masfem" ~ masfem,
@@ -699,23 +716,42 @@ immediately below it, mimicking notebook code chunks
               data = df)
     ```
 
-The following code chunk illustrates this behavior. Even though the
-variable `fit` was defined in a multiverse code block, since the default
-analysis is executed in the active R environment, the version
-corresponding to the default analysis can be accessed directly in R:
+During interactive use (i.e. when running code chunks individually in
+RMarkdown), the following code chunk illustrates this behavior. Even
+though the variable `fit` was defined in a multiverse code block, since
+the default analysis is executed in the active R environment, the
+version corresponding to the default analysis can be accessed directly
+in R:
 
 ``` r
 broom::tidy(fit)
-#> # A tibble: 7 × 5
-#>   term              estimate std.error statistic  p.value
-#>   <chr>                <dbl>     <dbl>     <dbl>    <dbl>
-#> 1 (Intercept)       -3.59      0.451      -7.97  1.53e-15
-#> 2 femininity        -0.146     0.504      -0.290 7.71e- 1
-#> 3 damage             0.772     0.0517     14.9   1.97e-50
-#> 4 z3                -0.481     0.0886     -5.43  5.69e- 8
-#> 5 femininity:damage  0.00719   0.0563      0.128 8.98e- 1
-#> 6 femininity:z3      0.484     0.0938      5.17  2.38e- 7
-#> 7 damage:post       -0.0386    0.00515    -7.48  7.27e-14
+```
+
+Note: this behavior is not permitted when a notebook is being
+knit—rendered to HTML (or some other format) using `knitr`. This is
+because we cannot control how code is executed when knitting, and we
+want to avoid providing the user with a surprising result. Instead, we
+through an error. If your code is running perfectly fine in a script
+file or markdown notebook, and only throwing an error when knitting with
+a message similar to `! object 'fit' not found`, this is likely because
+you are trying to access objects declared within a multiverse code block
+using an R code block.
+
+Instead, if we want to output the results of the default (or any
+particular) analysis while **knitting**, we should instead use:
+
+``` r
+extract_variable_from_universe(M, 1, fit) |> 
+  broom::tidy()
+#> # A tibble: 6 × 5
+#>   term               estimate   std.error statistic   p.value
+#>   <chr>                 <dbl>       <dbl>     <dbl>     <dbl>
+#> 1 (Intercept)      2.09       0.0908          23.0  2.03e-117
+#> 2 masfem           0.0454     0.0123           3.70 2.18e-  4
+#> 3 dam              0.0000195  0.00000338       5.77 8.10e-  9
+#> 4 zpressure        0.137      0.101            1.35 1.76e-  1
+#> 5 masfem:dam       0.00000110 0.000000421      2.61 8.94e-  3
+#> 6 masfem:zpressure 0.0253     0.0125           2.02 4.33e-  2
 ```
 
 Analysts can change which analysis path is executed by default. Inline
@@ -749,7 +785,7 @@ output by `expand()`, see below) allows analysts to execute a particular
 analysis path and reproduce errors encountered in the execution of that
 specific path.
 
-<img src="vignettes/figures/06-expand.png" width="90%" />
+<img src="man/figures/06-expand.png" width="90%" />
 
 ## Conclusion
 
@@ -781,10 +817,10 @@ implementations using this package to demonstrate how it might be used:
     Animations](https://explorablemultiverse.github.io/examples/dance/)
     (from [Increasing the transparency of research papers with
     explorable multiverse
-    analyses](https://hal.inria.fr/hal-01976951/document) )
+    analyses](https://inria.hal.science/hal-01976951/document) )
 -   Dragicevic et al.’s mini-paper [Re-evaluating the efficiency of
     Physical
     Visualisations](https://explorablemultiverse.github.io/examples/frequentist/)
     (from [Increasing the transparency of research papers with
     explorable multiverse
-    analyses](https://hal.inria.fr/hal-01976951/document) )
+    analyses](https://inria.hal.science/hal-01976951/document) )
